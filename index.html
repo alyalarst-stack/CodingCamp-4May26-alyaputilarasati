@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="wrapper">
+
+    <!-- GREETING -->
+    <div class="card greeting-card">
+      <div class="greeting-left">
+        <p class="app-label">Life Dashboard</p>
+        <p class="greeting-label" id="greeting-label">Good Morning</p>
+        <h1 class="greeting-name">Hey, RevoU Buddy!</h1>
+      </div>
+      <div class="greeting-right">
+        <p class="greeting-date" id="greeting-date"></p>
+        <div class="clock" id="clock">--:--:--</div>
+        <div class="btn-row">
+          <button class="btn" id="theme-btn">Dark Mode</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+
+      <!-- FOCUS TIMER -->
+      <div class="card timer-card">
+        <h2 class="card-title"> Focus Timer</h2>
+        <div class="timer-progress">
+          <div class="timer-progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="timer-display" id="timer-display">25:00</div>
+        <div class="timer-settings">
+          <label for="timer-input">Duration (min):</label>
+          <input type="number" id="timer-input" value="25" min="1" max="120" />
+        </div>
+        <div class="timer-btns">
+          <button class="btn btn-primary" id="start-btn">▶ Start</button>
+          <button class="btn" id="pause-btn">⏸ Pause</button>
+          <button class="btn" id="reset-btn">↺ Reset</button>
+        </div>
+        <p class="timer-status" id="timer-status">Ready to focus!</p>
+      </div>
+
+      <!-- TO-DO LIST -->
+      <div class="card todo-card">
+        <h2 class="card-title">To-Do List</h2>
+        <div class="todo-input-row">
+          <input type="text" id="task-input" placeholder="Add a new task…" />
+          <button class="btn btn-primary" id="add-task-btn">＋</button>
+        </div>
+        <div class="filter-row">
+          <button class="filter-btn active" data-f="all">All</button>
+          <button class="filter-btn" data-f="active">Active</button>
+          <button class="filter-btn" data-f="done">Done</button>
+        </div>
+        <ul class="task-list" id="task-list"></ul>
+        <p class="empty-hint" id="empty-tasks">No tasks yet. Add one above!</p>
+      </div>
+
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="card links-card">
+      <h2 class="card-title">Quick Links</h2>
+      <div class="links-input-row">
+        <input type="text" id="link-name" placeholder="Label (e.g. YouTube)" />
+        <input type="url" id="link-url" placeholder="https://…" />
+        <button class="btn btn-primary" id="add-link-btn">＋ Add</button>
+      </div>
+      <div class="links-grid" id="links-grid"></div>
+      <p class="empty-hint" id="empty-links">No links yet. Add your favorites!</p>
+    </div>
+
+  </div>
+
+  <p class="watermark">APL © 2026</p>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
